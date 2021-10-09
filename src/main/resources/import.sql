@@ -1,0 +1,1 @@
+insert into sl_produto(cd_produto,dt_atualizacao,dt_cadastro,nm_produto,cd_categoria,cd_status,cd_usuario) values(nextval('sq_produto'),CURRENT_TIMESTAMP,CURRENT_DATE,'Arroz Branco 2',null,null,null);

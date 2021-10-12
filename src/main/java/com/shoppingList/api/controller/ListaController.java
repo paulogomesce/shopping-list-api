@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.shoppingList.domain.model.ItemLista;
 import com.shoppingList.domain.model.Lista;
 import com.shoppingList.domain.service.ListaService;
 
@@ -56,5 +57,11 @@ public class ListaController {
 			return ResponseEntity.ok(listaPesquisada);
 		}
 		return ResponseEntity.notFound().build();
-	}	
+	}
+	
+	@PostMapping("/itens")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ItemLista adicionarItem(@RequestBody ItemLista itemLista) {
+		return listaService.gravaItemLista(itemLista);
+	}
 }

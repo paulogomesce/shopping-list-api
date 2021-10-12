@@ -26,7 +26,7 @@ public class CategoriaProduto implements java.io.Serializable {
 	@Column(name = "cd_categoria")
 	private Long cdCategoria;
 	
-	@Column(name = "ds_categoria")
-	private String dsCategoria;
+	@Column(name = "nm_categoria")
+	private String nomeCategoria;
 	
 }

@@ -19,7 +19,7 @@ public class StatusProduto{
 	@Column(name = "cd_status")
 	private Long cdStatus;
 	
-	@Column(name = "ds_status")
-	private String dsStatus;
+	@Column(name = "nm_status")
+	private String nomeStatus;
 	
 }

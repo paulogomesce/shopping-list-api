@@ -20,6 +20,6 @@ public class StatusItemLista{
 	private Long cdStatusItem;
 	
 	@Column(name = "nm_status")
-	private String nmStatus;
+	private String nomeStatus;
 	
 }

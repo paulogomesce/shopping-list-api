@@ -9,6 +9,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.shoppingList.domain.model.ItemLista;
 import com.shoppingList.domain.model.Lista;
 
 @Repository
@@ -34,6 +35,11 @@ public class ListaRepository {
 	@Transactional
 	public void deletar(Lista lista) {
 		manager.remove(lista);
+	}
+	
+	@Transactional
+	public ItemLista gravaItemLista(ItemLista itemLista) {
+		return manager.merge(itemLista);
 	}
 	
 }

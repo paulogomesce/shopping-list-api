@@ -41,6 +41,8 @@ public class ItemLista{
 	
 	private Integer quantidade;
 	
+	private String observacao;
+	
 	private Integer valor;	
 
 }

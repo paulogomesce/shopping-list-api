@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.shoppingList.domain.model.ItemLista;
 import com.shoppingList.domain.model.Lista;
 import com.shoppingList.infraestructure.repository.ListaRepository;
 
@@ -33,4 +34,15 @@ public class ListaService {
 	public void deletar(Lista lista) {
 		listaRepository.deletar(lista);
 	}
+	
+	public ItemLista gravaItemLista(ItemLista itemLista) {
+		if(itemLista.getDtCadastro() == null) {
+			itemLista.setDtCadastro(new Date());//TODO: trocar por optional
+		}
+		if(itemLista.getValor() == null) {
+			itemLista.setValor(0);//TODO: trocar por optional
+		}
+		return listaRepository.gravaItemLista(itemLista);
+	}
+
 }

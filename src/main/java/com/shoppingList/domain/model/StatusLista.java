@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "sl_status_lista")
+@Table(name = "SL_STATUS_LISTA")
 public class StatusLista{
 	
 	@EqualsAndHashCode.Include

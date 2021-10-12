@@ -16,7 +16,9 @@ public class ListaService {
 	private ListaRepository listaRepository;
 	
 	public Lista gravar(Lista lista){
-		lista.setDtCriacao(new Date());
+		if(lista.getCdLista() == null) {
+			lista.setDtCriacao(new Date());
+		}
 		return listaRepository.gravar(lista);
 	}
 	

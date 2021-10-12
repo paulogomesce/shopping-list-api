@@ -4,7 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -13,10 +16,12 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "usuario")
+@Table(name = "SL_USUARIO")
 public class Usuario{
 
 	@EqualsAndHashCode.Include
+	@SequenceGenerator(name = "sq_usuario", sequenceName = "sq_usuario", allocationSize = 1, initialValue = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_usuario")
 	@Id
 	@Column(name = "cd_usuario")
 	private Long cdUsuario;
@@ -25,6 +30,7 @@ public class Usuario{
 	private String nmCompleto;	
 	
 	private String email;
+	
 	private String senha;
 	
 	@Column(name = "nu_ddd")
